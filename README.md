@@ -1,30 +1,11 @@
-# React + TypeScript + Vite
+# Is it For Me?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Find out if it's for you? Worried that shampoo might be drying your scalp? Or what about that lotion, are you sure it's moisturizing? 
 
-Currently, two official plugins are available:
+With this app, you'll find out if everyday items is safe and effective. Educating the user about specific ingredients in the item and giving the item a score so that you can make the right choice. The right choice is a healthy and safe one.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Frontend: HTML, CSS (Tailwind), JavaScript (React for a smooth UI/UX)
+Backend: Node.js, Express.js
+Database: MongoDB for storing product information
+Barcode Scanning Library: QuaggaJS for barcode scanning
+API for Product Information: We'll use a third-party API or a pre-built database of product information if available.

@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <ul className="flex">
+    <ul className="flex justify-center">
       <li className="mr-3">
-        <Link to="/" className="inline-block border border-blue-500 rounded py-1 px-3 bg-blue-500 text-white">
+        <Link to="/" className="inline-block border outline-offset-4 rounded py-1 px-3  hover:bg-indigo-400 text-grey">
           Home
         </Link>
       </li>
       <li className="mr-3">
-        <Link to="/login" className="inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3">
+        <Link to="/login" className="inline-block border outline-offset-4 rounded py-1 px-3  hover:bg-indigo-400 text-grey">
           Login
         </Link>
       </li>
