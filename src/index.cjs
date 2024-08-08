@@ -1,6 +1,10 @@
 const express = require('express');
 const path = require('path');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
+
+const dbPassword = process.env.DATABASE_PASSWORD;
+
 
 
 const app = express();
