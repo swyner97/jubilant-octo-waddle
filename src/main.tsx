@@ -6,6 +6,8 @@ import App from "./App";
 import './index.css'; // Import Tailwind CSS
 
 
+
+
 const rootElement = document.getElementById("root")!;
 const root = ReactDOM.createRoot(rootElement);
 
