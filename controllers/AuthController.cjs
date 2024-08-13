@@ -4,7 +4,7 @@ const { createSecretToken } = require('../util/SecretToken.cjs');
 const jwt = require("jsonwebtoken");
 
 
-module.exports.Login = async (req, res, next) => {
+module.exports.Login = async (req, res) => {
   try {
     const { email, password } = req.body;
     if(!email || !password ){
@@ -23,8 +23,7 @@ module.exports.Login = async (req, res, next) => {
        withCredentials: true,
        httpOnly: false,
      });
-     res.status(201).json({ message: "User logged in successfully", success: true });
-     next()
+     res.status(201).json({ message: "User logged in successfully", success: true })
   } catch (error) {
     console.error(error);
   }

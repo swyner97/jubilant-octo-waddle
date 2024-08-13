@@ -1,10 +1,13 @@
+import { useLocation, Link } from "react-router-dom";
 import Beaker from "../components/Beaker";
 import Scanner from "../components/Scanner";
 
-import { Link } from 'react-router-dom';
-
-
 const Home = () => {
+  const location = useLocation();
+  const username = location.state?.username || "Guest";
+
+  console.log('Location State:', location.state); 
+
   return (
     <div className="text-gray-800">
       <header className="bg-white shadow-md p-4 flex justify-between items-center">
@@ -15,7 +18,8 @@ const Home = () => {
           </h1>
         </div>
         <div className="relative">
-          <Link to ="" className="rounded-full">
+          <h1>Welcome {username}</h1>
+          <Link to="" className="rounded-full">
             <img
               src="profile-icon.png"
               alt="Profile"
@@ -47,85 +51,18 @@ const Home = () => {
                 </svg>
               </button>
             </div>
-
             <div
               className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
             >
-              <div className="py-1" role="none">
-                {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-0"
-                >
-                  Edit
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-1"
-                >
-                  Duplicate
-                </a>
-              </div>
-              <div className="py-1" role="none">
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-2"
-                >
-                  Archive
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-3"
-                >
-                  Move
-                </a>
-              </div>
-              <div className="py-1" role="none">
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-4"
-                >
-                  Share
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-5"
-                >
-                  Add to favorites
-                </a>
-              </div>
-              <div className="py-1" role="none">
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  id="menu-item-6"
-                >
-                  Delete
-                </a>
-              </div>
+              {/* Menu items */}
             </div>
           </div>
         </div>
       </header>
-      {/* Main Content Area */}
       <main className="p-8 bg-gradient-to-tr from-red-400 via-amber-300 to-indigo-400">
-        {/* Scanner Section */}
         <Scanner />
       </main>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>

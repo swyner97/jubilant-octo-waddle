@@ -18,12 +18,17 @@ const userSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: new Date(),
+    default: Date.now,
   },
 });
 
-userSchema.pre("save", async function () {
-  this.password = await bcrypt.hash(this.password, 12);
+userSchema.pre("save", async function (next) {
+  if (this.isModified("password")) { // Only hash if the password has changed
+    this.password = await bcrypt.hash(this.password, 12);
+  }
+  next(); // Call next to proceed to the save operation
 });
 
-const UserModel = module.exports = mongoose.model("User", userSchema);
+const UserModel = mongoose.model("User", userSchema);
+
+module.exports = UserModel; 
