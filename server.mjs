@@ -1,17 +1,17 @@
-const express = require("express");
-const path = require("path");
-const bcrypt = require("bcrypt");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const connectDB = require('./src/db.cjs');
-const cookieParser = require("cookie-parser");
-const authRoute = require("./routes/AuthRoute.cjs");
-const UserModel = require('./models/User.cjs')
+import express from 'express';
+import bcrypt from 'bcrypt';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+import connectDB from './src/db.cjs';
+import authRoute from './routes/AuthRoute.cjs';
+import UserModel from './models/User.cjs';
 
 dotenv.config();
 
 const dbPassword = process.env.DATABASE_PASSWORD;
 const PORT = process.env.PORT || 5000;
+
 
 const app = express();
 
@@ -47,9 +47,7 @@ app.post('/login', async (req, res) => {
     if (user) {
       const validPassword = await bcrypt.compare(password, user.password);
       if (validPassword) {
-        const username = user.username;
-        console.log(username)
-        return username; // Ensure this is correct
+      return res.json({message:"login sucessful"});
       } else {
         return res.json({ success: false, message: "incorrect password" });
       }
